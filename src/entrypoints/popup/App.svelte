@@ -1,40 +1,60 @@
 <script lang="ts">
-	import svelteLogo from '../../assets/svelte.svg';
-	import Counter from '../../lib/Counter.svelte';
+	import bookmarkLogo from '../../assets/bookmark.svg';
+	const heading = 'BookSwitch';
+	const chars = heading.split('');
 </script>
 
 <main>
 	<div>
-		<a href="https://wxt.dev" target="_blank" rel="noreferrer">
-			<img src="/wxt.svg" class="logo" alt="WXT Logo" />
-		</a>
-		<a href="https://svelte.dev" target="_blank" rel="noreferrer">
-			<img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-		</a>
+		<img src={bookmarkLogo} class="logo bookSwitch" alt="BookSwitch Logo" />
 	</div>
-	<h1>WXT + Svelte</h1>
-
-	<div class="card">
-		<Counter />
-	</div>
-
-	<p class="read-the-docs">Click on the WXT and Svelte logos to learn more</p>
+	<h1>
+		{#each chars as char, index (index)}
+			<span class="wiggle-char">{char}</span>
+		{/each}
+	</h1>
 </main>
 
 <style>
+	@keyframes wiggle {
+		0%,
+		100% {
+			transform: rotate(0deg) translate(0, 0);
+		}
+		25% {
+			transform: rotate(-2deg) translate(-2px, 0);
+		}
+		50% {
+			transform: rotate(2deg) translate(2px, 0);
+		}
+		75% {
+			transform: rotate(-2deg) translate(-2px, 0);
+		}
+	}
+
 	.logo {
 		height: 6em;
 		padding: 1.5em;
-		will-change: filter;
+		will-change: filter, transform;
 		transition: filter 300ms;
 	}
+
 	.logo:hover {
 		filter: drop-shadow(0 0 2em #54bc4ae0);
+		animation: wiggle 0.6s ease-in-out infinite;
 	}
-	.logo.svelte:hover {
+
+	.logo.bookSwitch:hover {
 		filter: drop-shadow(0 0 2em #ff3e00aa);
 	}
-	.read-the-docs {
-		color: #888;
+
+	.wiggle-char {
+		display: inline-block;
+		will-change: transform;
+		transform-origin: center bottom;
+	}
+
+	h1:hover .wiggle-char {
+		animation: wiggle 0.6s ease-in-out infinite;
 	}
 </style>

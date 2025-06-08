@@ -1,0 +1,99 @@
+:root {
+	color-scheme: dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	--bg: #1e1e1e;
+	--card-bg: #2a2a2a;
+	--text: #f0f0f0;
+	--text-light: #bbbbbb;
+	--accent: #ff8a3d; /* orange from bookmark icon */
+	--accent-glow: #ff8a3d88;
+	--code-bg: #333333;
+	--shadow: rgba(0, 0, 0, 0.5);
+
+	font-family: 'Happy Monkey', Inter, system-ui, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 1rem;
+}
+
+.container {
+	background: var(--card-bg);
+	border-radius: 12px;
+	box-shadow: 0 8px 24px var(--shadow);
+	max-width: 760px;
+	width: 100%;
+	padding: 2rem;
+	text-align: left;
+	border: 1px solid #3b3b3b;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	color: var(--accent);
+	text-shadow: 0 0 5px var(--accent-glow);
+}
+
+h2 {
+	font-size: 1.4rem;
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+	color: var(--text);
+}
+
+p {
+	font-size: 1rem;
+	margin-bottom: 1rem;
+	color: var(--text-light);
+	line-height: 1.6;
+}
+
+ul {
+	padding-left: 1.5rem;
+	margin-bottom: 1.25rem;
+}
+
+li {
+	margin-bottom: 0.6rem;
+}
+
+code {
+	background: var(--code-bg);
+	padding: 0.2rem 0.5rem;
+	border-radius: 4px;
+	font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+	font-size: 0.95rem;
+	color: #ffd866;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: 500;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.footer-note {
+	margin-top: 2rem;
+	font-size: 0.9rem;
+	text-align: center;
+	color: var(--text-light);
+	opacity: 0.8;
+}
