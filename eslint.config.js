@@ -1,18 +1,12 @@
-import js from '@eslint/js';
 import ts from 'typescript-eslint';
 import svelte from 'eslint-plugin-svelte';
 import prettier from 'eslint-config-prettier';
 import globals from 'globals';
-import { includeIgnoreFile } from '@eslint/compat';
-import { fileURLToPath } from 'node:url';
-
-const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
 export default [
-	includeIgnoreFile(gitignorePath),
 	{
-		files: ['**/*.ts', '**/*.svelte', '**/*.svelte.ts'],
-		ignores: ['wxt.config.ts', 'wxt-env.d.ts'],
+		files: ['src/**/*.{ts,svelte}'],
+		ignores: ['wxt.config.ts', 'wxt-env.d.ts', '.wxt/types/'],
 		plugins: {
 			'@typescript-eslint': ts.plugin
 		},

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import bookmarkLogo from '../../assets/bookmark.svg';
+	import bookmarkLogo from '@/src/assets/bookmark.svg';
 	const heading = 'BookSwitch';
 	const chars = heading.split('');
 </script>
