@@ -9,9 +9,9 @@ export default defineBackground(() => {
 						resolve([]);
 						return;
 					}
-					const bookmarks: Browser.bookmarks.BookmarkTreeNode[] = children.filter(
-						(item) => item.url
-					).slice(0, 9);
+					const bookmarks: Browser.bookmarks.BookmarkTreeNode[] = children
+						.filter((item) => item.url)
+						.slice(0, 9);
 					resolve(bookmarks);
 				});
 		});
