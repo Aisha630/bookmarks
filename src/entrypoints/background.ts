@@ -11,7 +11,7 @@ export default defineBackground(() => {
 					}
 					const bookmarks: Browser.bookmarks.BookmarkTreeNode[] = children.filter(
 						(item) => item.url
-					);
+					).slice(0, 9);
 					resolve(bookmarks);
 				});
 		});
