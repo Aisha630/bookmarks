@@ -1,8 +1,8 @@
 {
-	"name": "wxt-svelte-starter",
-	"description": "manifest.json description",
+	"name": "book-switch",
+	"description": "A browser extension to switch between different bookmark within Bookmarks Bar.",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "wxt",
@@ -21,6 +21,7 @@
 		"@wxt-dev/module-svelte": "^2.0.3",
 		"eslint": "^9.28.0",
 		"eslint-config-prettier": "^10.1.5",
+		"eslint-plugin-prettier": "^5.4.1",
 		"eslint-plugin-svelte": "^3.9.1",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.4.0",

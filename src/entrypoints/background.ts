@@ -1,26 +1,30 @@
 export default defineBackground(() => {
 	async function getBookmarksBar(): Promise<Browser.bookmarks.BookmarkTreeNode[]> {
 		return new Promise((resolve) => {
-			browser.bookmarks.getChildren('1').then((children) => {
-				if (!children?.length) {
-					console.warn('No bookmarks found in the Bookmarks Bar.');
-					resolve([]);
-					return;
-				}
-				const bookmarks = children.filter((item) => item.url);
-				resolve(bookmarks);
-			});
+			browser.bookmarks
+				.getChildren('1')
+				.then((children: Browser.bookmarks.BookmarkTreeNode[]) => {
+					if (!children?.length) {
+						console.warn('No bookmarks found in the Bookmarks Bar.');
+						resolve([]);
+						return;
+					}
+					const bookmarks: Browser.bookmarks.BookmarkTreeNode[] = children.filter(
+						(item) => item.url
+					);
+					resolve(bookmarks);
+				});
 		});
 	}
 
-	browser.runtime.onInstalled.addListener((details) => {
+	browser.runtime.onInstalled.addListener((details: Browser.runtime.InstalledDetails) => {
 		if (details.reason === 'install') {
 			const welcomeUrl = browser.runtime.getURL('/welcome.html');
 			browser.tabs.create({ url: welcomeUrl });
 		}
 	});
 
-	browser.commands.onCommand.addListener(async (command) => {
+	browser.commands.onCommand.addListener(async (command: string) => {
 		if (!command.startsWith('open-bookmark-')) return;
 
 		try {

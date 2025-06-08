@@ -2,20 +2,11 @@
 	"extends": "./.wxt/tsconfig.json",
 	"compilerOptions": {
 		"useDefineForClassFields": true,
-		"allowJs": false,
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
 		"noImplicitAny": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"skipLibCheck": true,
 		"isolatedModules": true,
 		"allowSyntheticDefaultImports": true,
-		"baseUrl": ".",
-		"paths": {
-			"@/*": ["*"]
-		}
-	},
-	"include": ["src", ".wxt/types", "global.d.ts"],
-	"exclude": ["node_modules", ".output"]
+		"baseUrl": "."
+	}
 }
