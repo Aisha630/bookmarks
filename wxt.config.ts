@@ -8,7 +8,7 @@ export default defineConfig({
 		description:
 			'A browser extension to switch between different bookmark within Bookmarks Bar.',
 		version: '1.0.0',
-		permissions: ['commands', 'bookmarks', 'tabs'],
+		permissions: ['commands', 'bookmarks'],
 		background: {
 			service_worker: 'background.ts'
 		},
