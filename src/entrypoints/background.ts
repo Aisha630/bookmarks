@@ -1,24 +1,23 @@
 export default defineBackground(() => {
 	async function getBookmarksBar(): Promise<Browser.bookmarks.BookmarkTreeNode[]> {
 		return new Promise((resolve) => {
-
-            let bookmarksTab = '1'
-            if (import.meta.env.FIREFOX) {
+			let bookmarksTab = '1';
+			if (import.meta.env.FIREFOX) {
 				bookmarksTab = 'toolbar_____';
 			}
-            browser.bookmarks
-                .getChildren(bookmarksTab)
-                .then((children: Browser.bookmarks.BookmarkTreeNode[]) => {
-                    if (!children?.length) {
-                        console.warn('No bookmarks found in the Bookmarks Bar.');
-                        resolve([]);
-                        return;
-                    }
-                    const bookmarks: Browser.bookmarks.BookmarkTreeNode[] = children
-                        .filter((item) => item.url)
-                        .slice(0, 9);
-                    resolve(bookmarks);
-                });
+			browser.bookmarks
+				.getChildren(bookmarksTab)
+				.then((children: Browser.bookmarks.BookmarkTreeNode[]) => {
+					if (!children?.length) {
+						console.warn('No bookmarks found in the Bookmarks Bar.');
+						resolve([]);
+						return;
+					}
+					const bookmarks: Browser.bookmarks.BookmarkTreeNode[] = children
+						.filter((item) => item.url)
+						.slice(0, 9);
+					resolve(bookmarks);
+				});
 		});
 	}
 

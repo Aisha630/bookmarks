@@ -2,6 +2,10 @@
 	import bookmarkLogo from '@/assets/bookmark.svg';
 	const heading = 'BookSwitch';
 	const chars = heading.split('');
+
+	function openOptions() {
+		chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });
+	}
 </script>
 
 <main>
@@ -13,6 +17,7 @@
 			<span class="wiggle-char">{char}</span>
 		{/each}
 	</h1>
+	<button type="button" on:click={openOptions}>Configure the remaining shortcut keys</button>
 </main>
 
 <style>
@@ -56,5 +61,20 @@
 
 	h1:hover .wiggle-char {
 		animation: wiggle 0.6s ease-in-out infinite;
+	}
+
+	button {
+		background-color: rgb(234, 123, 111);
+		color: black;
+		border: none;
+		padding: 1em 1em;
+		font-size: 1em;
+		cursor: pointer;
+		border-radius: 10px;
+		transition: background-color 0.3s ease;
+	}
+
+	button:hover {
+		background-color: rgb(234, 100, 90);
 	}
 </style>
