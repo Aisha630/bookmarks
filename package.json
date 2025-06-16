@@ -2,7 +2,7 @@
 	"name": "book-switch",
 	"description": "A browser extension to switch between different bookmark within Bookmarks Bar.",
 	"private": true,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "wxt",

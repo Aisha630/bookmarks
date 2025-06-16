@@ -7,7 +7,7 @@ export default defineConfig({
 		name: 'BookSwitch',
 		description:
 			'A browser extension to switch between different bookmark within Bookmarks Bar.',
-		version: '1.0.0',
+		version: '1.0.1',
 		permissions: ['commands', 'bookmarks'],
 		background: {
 			service_worker: 'background.ts'
